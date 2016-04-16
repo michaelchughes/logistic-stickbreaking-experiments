@@ -10,13 +10,13 @@ Assuming you've got CmdStan installed in $STANPATH, you can do:
 $ python data/MakeToyData.py > data/datafile.R
 ```
 ### Compile the Dirichlet  model
-$ ./compileModel.sh countsToDirichlet
+$ ./compileModel.sh countsFromDirichlet
 
 ### Compile the hierarchical logistic stick-breaking model
-$ ./compileModel.sh countsToHLogisticStickBreak
+$ ./compileModel.sh countsFromHLogisticStickBreak
 
 ### Train the Dirichlet model from data
-$ ./countsToDirichlet sample data file=data/datafile.R
+$ ./countsFromDirichlet sample data file=data/datafile.R
 
 ### Train the hlsb model from data
-$ ./countsToHLogisticStickBreak sample data file=data/datafile.R
+$ ./countsFromHLogisticStickBreak sample data file=data/datafile.R
