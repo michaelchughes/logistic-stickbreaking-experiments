@@ -1,0 +1,22 @@
+Simple set of models and data for comparing Dirichlet priors to logistic-stick-breaking priors for count data.
+
+Usage
+-----
+
+Assuming you've got CmdStan installed in $STANPATH, you can do:
+
+### Create toy dataset, save in R-dump plain-text format as data/datafile.R
+```
+$ python data/MakeToyData.py > data/datafile.R
+```
+### Compile the Dirichlet  model
+$ ./compileModel.sh countsToDirichlet
+
+### Compile the hierarchical logistic stick-breaking model
+$ ./compileModel.sh countsToHLogisticStickBreak
+
+### Train the Dirichlet model from data
+$ ./countsToDirichlet sample data file=data/datafile.R
+
+### Train the hlsb model from data
+$ ./countsToHLogisticStickBreak sample data file=data/datafile.R
